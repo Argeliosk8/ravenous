@@ -1,5 +1,3 @@
-import './App.css';
-import './index.css';
 import React, {useState} from 'react';
 
    
@@ -17,7 +15,7 @@ function App() {
 
     function Login(){
         return (
-            <div className="col-3 mx-auto my-5 bg-secondary rounded">
+            <div className="col-3 mx-auto my-auto pb-4 bg-secondary rounded">
             <form action="">
                 <div className="my-3 mx-3">
                     <label for="please_login" className="form-label pt-3"><h2>Please login</h2></label>
@@ -33,7 +31,7 @@ function App() {
                 <div className="pb-3 mx-3">
                     <div className="d-grid gap-2">
                         <button className="btn btn-primary" type="button">Login</button>
-                        <Button />
+                        <button className='btn btn-primary my-auto' type='button' onClick={handleClick}>Show me the form</button>
                     </div>
                 </div>
             </form>
@@ -42,7 +40,11 @@ function App() {
     }
 
     function Button() {
-        return <button className='btn btn-primary' type='button' onClick={handleClick}>Show me the form</button>
+        return (
+            <div className='w-100 my-auto' id="bcontainer">
+                <button id="showme"className='btn btn-primary my-auto' type='button' onClick={handleClick}>Show me the form</button>
+            </div>
+        )
     }
 
     return (showForm === 0 ? <Button /> : <Login />)
