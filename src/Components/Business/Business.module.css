@@ -24,6 +24,7 @@
     width: 100%;
     position: relative;
     object-fit: cover;
+    object-position: 50% 50%;
 }
 
 .nameContainer {
@@ -31,6 +32,10 @@
     width: 100%;
     position: relative;
     margin-top: 10px;
+}
+
+.nameContainer h4 {
+    padding-left: 5px;
 }
 
 .infoContainer {
@@ -52,9 +57,11 @@
 
 .addressContainer p {
     margin: 0;
+    padding-left: 5px;
 }
 
 .statsContainer p {
     margin: 0;
     text-align: end;
+    padding-right: 5px;
 }
