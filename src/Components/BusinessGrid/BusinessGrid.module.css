@@ -1,0 +1,8 @@
+.businessgrid {
+
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    margin: auto;
+    width: 60%;
+}
