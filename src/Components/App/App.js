@@ -1,12 +1,17 @@
 import React, {useState} from 'react';
-import Business from '../Business/Business';
-import BusinessGrid from '../BusinessGrid/BusinessGrid'
+import BusinessGrid from '../BusinessGrid/BusinessGrid';
+import SearchBar from '../SearchBar/SearchBar';
+import styles from './App.module.css'
 
 
 
 function App() {   
     return (
-        <BusinessGrid />     
+        <div className={styles.AppContainer}>
+            <div className={styles.headerContainer}><h1>ravenous</h1></div>
+            <SearchBar />
+            <BusinessGrid />
+        </div>     
     )
 }
 

@@ -1,0 +1,104 @@
+.SearchBarContainer {
+    width: 100%;
+    height: 40%;
+    background-image: url("https://images.unsplash.com/photo-1491185841098-9ce20f966624?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1632&q=80");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: 50% 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.sortingContainer {
+    position: relative;
+    width: 100%;
+    height: 20%;
+    display: flex;
+    justify-content: center;
+}
+
+
+
+.sortingContainer ul {
+    position: relative;
+    height: 100%;
+    width: 30%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 0;
+    margin: 0;
+}
+
+.sortingContainer * {
+    text-decoration: none;
+    list-style: none;
+    color: white;
+    text-align: center;
+}
+
+.whiteline {
+    height: 2px;
+    background-color: white;
+    width: 35%;
+}
+
+
+
+.inputsContainer {
+    position: relative;
+    width: 100%;
+    height: 20%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.inputsContainer div {
+    height: 100%;
+    width: 25%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 5px;
+}
+
+.inputSearch {
+    height: 70%;
+    width: 100%;
+    border-radius: 5px;
+    border-style:unset;
+    color: black;
+    outline: 0;
+    
+}
+
+.inputSearch::placeholder {
+    color: grey;
+    opacity: 0.8;
+    padding-left: 10px;
+    
+}
+
+
+.buttonContainer {
+    position: relative;
+    width: 100%;
+    height: 20%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.searchButton {
+    background-color: darkgoldenrod;
+    border-style: none;
+    border-radius: 3px;
+    height: 40px;
+    width: 100px;
+    color: white;
+    
+}
