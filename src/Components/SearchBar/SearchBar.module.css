@@ -67,11 +67,12 @@
 
 .inputSearch {
     height: 70%;
-    width: 100%;
+    width: 80%;
     border-radius: 5px;
     border-style:unset;
     color: black;
     outline: 0;
+    transition: width 0.4s ease-in-out;
     
 }
 
@@ -80,6 +81,11 @@
     opacity: 0.8;
     padding-left: 10px;
     
+}
+
+.inputSearch:focus {
+    background-color: lightblue;
+    width: 100%;
 }
 
 
@@ -100,5 +106,10 @@
     height: 40px;
     width: 100px;
     color: white;
+    transition: width 0.4s ease-in-out;
     
+}
+
+.searchButton:hover {
+    width: 150px;
 }

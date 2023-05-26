@@ -9,7 +9,19 @@
     display: block;
     margin-top: 50px;
     background-color: whitesmoke;
+    border-radius: none;
 }
+
+@keyframes backgroundchange {
+    from {background-color: whitesmoke;}
+    to {background-color:cadetblue;}    
+}
+
+.businessContainer:hover {
+    animation-name: backgroundchange;
+    animation-duration: 4s;
+}
+
 
 .imgContainer {
     width: 100%;
@@ -64,4 +76,6 @@
     margin: 0;
     text-align: end;
     padding-right: 5px;
+    color: darkgoldenrod;
 }
+
