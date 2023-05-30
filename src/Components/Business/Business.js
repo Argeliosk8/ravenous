@@ -1,20 +1,7 @@
 import React from "react";
 import styles from "./Business.module.css"
 
-const business = {
-    imagesrc: "https://images.unsplash.com/photo-1613564834361-9436948817d1?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=743&q=80",
-    name: "Pizza Nostra",
-    address: "101 Elizabeth St",
-    city: "Oradell",
-    state: "NJ",
-    zipcode: "07649",
-    type: "ITALIAN",
-    rating: 4.8,
-    reviews: 90
-
-}
-
-function Business(){
+function Business({business}){
     return (
         <div className={styles.businessContainer}>
             <div className={styles.imgContainer}><img src={business.imagesrc} alt=""/></div>
