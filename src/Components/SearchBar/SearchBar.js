@@ -4,7 +4,7 @@ import Button  from "./Button";
 
 
 function SearchBar(){
-    
+
     const sortByOptions = {
         "Best Match": "best_match",
         "Highest Rated": "rating",
@@ -37,9 +37,7 @@ function SearchBar(){
 
     function renderSortingOptions(sortByOptions) {
         let keys = Object.keys(sortByOptions)
-        return keys.map((key)=>{
-            return (<div><input type="button" value={key} className={styles.sortingButton} ></input></div>)
-        })
+        return keys.map((key)=>((<div><input type="button" value={key} className={styles.sortingButton} ></input></div>)))
     }
 
     return (
