@@ -72,8 +72,13 @@
     border-style:unset;
     color: black;
     outline: 0;
-    transition: width 0.4s ease-in-out;
+    transition: width 0.4s ease-in-out;    
+    font-weight: 400;
     
+}
+
+input[type=text] {
+
 }
 
 .inputSearch::placeholder {
@@ -112,4 +117,18 @@
 
 .searchButton:hover {
     width: 150px;
+}
+
+.sortingButton {
+    background-color: transparent;
+    border: none;
+    text-align: center;
+}
+
+.sortingButton:focus-within {
+    color:  darkgoldenrod !important;
+}
+
+.sortingButton:hover {
+    font-size: 20px;
 }

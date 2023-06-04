@@ -1,31 +1,61 @@
-import React from "react";
+import React, {useState, useEffect} from "react";
 import styles from "./SearchBar.module.css"
 import Button  from "./Button";
 
-const searchBar = {
-    imgSrc: "https://images.unsplash.com/photo-1491185841098-9ce20f966624?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1632&q=80"
-}
 
 function SearchBar(){
-    function handleClick(){
-        alert('Hola soy un boton que aun no tiene funcionalidad');
+    
+    const sortByOptions = {
+        "Best Match": "best_match",
+        "Highest Rated": "rating",
+        "Most Reviewed": "review_count"
     }
+
+    const [searchTerm, setSearchTerm] = useState('');
+    const [searchLocation, setSearchLocation] = useState('');
+    const [sortingOption, setSortingOption] = useState('best_match')
+
+
+    function handleClick(event) {
+        let key = event.target.value
+        setSortingOption(sortByOptions[key])
+    }
+
+    function handleTermChange(event) {
+        setSearchTerm(event.target.value)
+    }
+
+    function handleLocationChange(event) {
+        setSearchLocation(event.target.value)
+    }
+
+    const searchMessage = {
+        term: searchTerm,
+        location: searchLocation,
+        sorting: sortingOption
+    }
+
+    function renderSortingOptions(sortByOptions) {
+        let keys = Object.keys(sortByOptions)
+        return keys.map((key)=>{
+            return (<div><input type="button" value={key} className={styles.sortingButton} ></input></div>)
+        })
+    }
+
     return (
         <div className={styles.SearchBarContainer}>
             <div className={styles.sortingContainer}>
-                <ul>
-                    <div><li><a href="#home">Best<br></br>Match</a></li></div>
-                    <div><li><a href="#news">Highest<br></br>Rated</a></li></div>
-                    <div><li><a href="#contact">Most<br></br>Reviewed</a></li></div>                    
+                <ul onClick={handleClick} >
+                    {renderSortingOptions(sortByOptions)}
                 </ul>
             </div>
             <div className={styles.whiteline}></div>
             <div className={styles.inputsContainer}>
-                <div><input className={styles.inputSearch} type="search" placeholder="Search Businesses"></input></div>
-                <div><input className={styles.inputSearch} type="search" placeholder="Where?"></input></div>              
+                <div><input className={styles.inputSearch} type="text" placeholder="Search Businesses" onChange={handleTermChange}></input></div>
+                <div><input className={styles.inputSearch} type="text" placeholder="Where?" onChange={handleLocationChange}></input></div>              
             </div>
             <div className={styles.buttonContainer}>
-                <Button onClick = {handleClick}/>
+                <Button searchMessage={searchMessage}/>
             </div>
         </div>
     );
