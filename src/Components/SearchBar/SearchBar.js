@@ -11,7 +11,7 @@ function SearchBar(){
         "Most Reviewed": "review_count"
     }
 
-    const [searchTerm, setSearchTerm] = useState('');
+    const [searchCategory, setSearchCategory] = useState('');
     const [searchLocation, setSearchLocation] = useState('');
     const [sortingOption, setSortingOption] = useState('best_match')
 
@@ -21,18 +21,18 @@ function SearchBar(){
         setSortingOption(sortByOptions[key])
     }
 
-    function handleTermChange(event) {
-        setSearchTerm(event.target.value)
+    function handleSerchCategory(event) {
+        setSearchCategory(event.target.value)
     }
 
     function handleLocationChange(event) {
         setSearchLocation(event.target.value)
     }
 
-    const searchMessage = {
-        term: searchTerm,
+    const searchCriteria = {
+        category: searchCategory,
         location: searchLocation,
-        sorting: sortingOption
+        sort_by: sortingOption
     }
 
     function renderSortingOptions(sortByOptions) {
@@ -49,11 +49,11 @@ function SearchBar(){
             </div>
             <div className={styles.whiteline}></div>
             <div className={styles.inputsContainer}>
-                <div><input className={styles.inputSearch} type="text" placeholder="Search Businesses" onChange={handleTermChange}></input></div>
+                <div><input className={styles.inputSearch} type="text" placeholder="Search Businesses" onChange={handleSerchCategory}></input></div>
                 <div><input className={styles.inputSearch} type="text" placeholder="Where?" onChange={handleLocationChange}></input></div>              
             </div>
             <div className={styles.buttonContainer}>
-                <Button searchMessage={searchMessage}/>
+                <Button searchCriteria={searchCriteria}/>
             </div>
         </div>
     );

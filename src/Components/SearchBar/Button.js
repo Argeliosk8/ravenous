@@ -1,10 +1,13 @@
 import React from "react";
 import styles from "./SearchBar.module.css"
+import searchBusiness from "../../Utils/YelpApi";
 
-function Button({searchMessage}) {
-    function handleClick(event) {
-        event.preventDefault()
-        console.log(`Searching Yelp with ${searchMessage.term}, ${searchMessage.location}, ${searchMessage.sorting}`)
+
+function Button({searchCriteria}) {
+
+    function handleClick(){
+        
+        searchBusiness(searchCriteria.location, searchCriteria.category, searchCriteria.sort_by)
     }
     
     return (
