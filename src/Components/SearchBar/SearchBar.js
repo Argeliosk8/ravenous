@@ -3,7 +3,7 @@ import styles from "./SearchBar.module.css"
 import Button  from "./Button";
 
 
-function SearchBar(){
+function SearchBar({handleSearch}){
 
     const sortByOptions = {
         "Best Match": "best_match",
@@ -16,7 +16,7 @@ function SearchBar(){
     const [sortingOption, setSortingOption] = useState('best_match')
 
 
-    function handleClick(event) {
+    function handleSortingClick(event) {
         let key = event.target.value
         setSortingOption(sortByOptions[key])
     }
@@ -40,10 +40,15 @@ function SearchBar(){
         return keys.map((key)=>((<div><input type="button" value={key} className={styles.sortingButton} ></input></div>)))
     }
 
+    function handleClick(){        
+        handleSearch(searchCriteria.location, searchCriteria.category, searchCriteria.sort_by)
+        
+      }
+
     return (
         <div className={styles.SearchBarContainer}>
             <div className={styles.sortingContainer}>
-                <ul onClick={handleClick} >
+                <ul onClick={handleSortingClick} >
                     {renderSortingOptions(sortByOptions)}
                 </ul>
             </div>
@@ -53,7 +58,7 @@ function SearchBar(){
                 <div><input className={styles.inputSearch} type="text" placeholder="Where?" onChange={handleLocationChange}></input></div>              
             </div>
             <div className={styles.buttonContainer}>
-                <Button searchCriteria={searchCriteria}/>
+                <Button handleClick={handleClick}/>
             </div>
         </div>
     );

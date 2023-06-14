@@ -78,13 +78,18 @@
 }
 
 input[type=text] {
-
+    color: black;
+    padding-left: 15px;
+    font-weight: bold;
+    font-size: 20px;
 }
 
 .inputSearch::placeholder {
     color: grey;
     opacity: 0.8;
     padding-left: 10px;
+    font-size: 15px;
+    font-weight: normal;
     
 }
 
