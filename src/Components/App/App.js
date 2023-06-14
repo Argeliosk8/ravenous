@@ -29,8 +29,14 @@ function App() {
             const tempbusinesses = await searchBusiness(location, category, sort_by)
             setBusinesses(()=>[])
             tempbusinesses.forEach(business => {
-                setBusinesses((prev)=>[business, ...prev])
+                if(businesses === []){
+                    setBusinesses(()=>[business])
+                } else {
+                    setBusinesses((prev)=>[...prev, business])
+                }
             })
+            
+            console.log(tempbusinesses)
         }
 
     
