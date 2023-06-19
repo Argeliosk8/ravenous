@@ -1,6 +1,6 @@
 import React from "react";
 
-const apiKey = 'Bearer '
+const apiKey = 'Bearer iIKdZiFvldlVmUIPXMQZsOHYWbzOOWd6dblsloccq_bvMzthEdd9mgEcdJ4NGf1yHzPXdoefOnNdr9m8oVmswWNG5kGughpkCCao_wWkVI6Oek_b0WpUpIIdXPGIZHYx'
 const baseUrl = 'https://api.yelp.com/v3' 
 const options = {
     method: 'GET',
